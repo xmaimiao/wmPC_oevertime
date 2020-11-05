@@ -1,0 +1,24 @@
+approved:
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[1]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[1]'
+    action: click
+
+not_approved:
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[2]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[2]'
+    action: click
+
+remarks:
+  - by: xpath
+    locator: '//*[@name="remark"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@name="remark"]'
+    action: send
+    value: ${remarks}

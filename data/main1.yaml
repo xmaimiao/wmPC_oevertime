@@ -1,0 +1,4 @@
+goto_OA_Approval:
+  - by: xpath
+    locator: '//*[@class="nav"]/li[3]/a/span'
+    action: click

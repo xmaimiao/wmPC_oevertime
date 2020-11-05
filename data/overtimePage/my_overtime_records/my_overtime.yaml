@@ -1,0 +1,7 @@
+get_page_title:
+  - by: xpath
+    locator: '//*[@class="tab_title_2"]/a'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tab_title_2"]/a'
+    action: text

@@ -1,0 +1,37 @@
+click_clear_button:
+  - by: xpath
+    locator: '//*[@class="btn btn-danger del"]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="btn btn-danger del"]'
+    action: click
+
+click_save:
+  - by: xpath
+    locator: '//*[@class="share_footer"]//input[1]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="share_footer"]//input[1]'
+    action: click
+
+choise_staff:
+  - by: xpath
+    locator: '//*[@class="searchbox_1 popup_s"]/input[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="searchbox_1 popup_s"]/input[2]'
+    action: send
+    value: ${user}
+  - by: xpath
+    locator: 22
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="searchbox_1 popup_s"]/input[1]'
+    action: click
+  - by: xpath
+    locator: '//span[contains(text(),"${user}")]'
+    action: wait
+  - by: xpath
+    locator: '//span[contains(text(),"${user}")]'
+    action: eles
+

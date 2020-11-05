@@ -1,0 +1,14 @@
+goto_my_overtime_records:
+  - by: xpath
+    locator: '//span[contains(text(),"我的加班")]'
+    action: click
+
+goto_overtime_application:
+  - by: xpath
+    locator: '//*[@class="icon iconfont icon-jiaban-shenqingjiaban"]/../../span[contains(text(),"申請加班")]'
+    action: click
+
+goto_overtime_approval:
+  - by: xpath
+    locator: '//*[@class="icon iconfont icon-jiaban-jiabanshenpi"]/../../span[contains(text(),"加班審批")]'
+    action: click

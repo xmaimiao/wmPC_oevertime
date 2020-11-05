@@ -1,0 +1,13 @@
+goto_overtime:
+  -
+    by: xpath
+    locator: 2
+    action: sleep
+  -
+    by: xpath
+    locator: '//*[contains(text(),"${application}")]'
+    action: wait_click
+  -
+    by: xpath
+    locator: '//*[contains(text(),"${application}")]'
+    action: click

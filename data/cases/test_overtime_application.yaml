@@ -1,0 +1,8 @@
+#uat密码wemust@Better  正式站：wemust@prod
+dev: {username: test11,password: wemust@dev,application: 加班}
+uat: {username: mai2,password: wemust@Better,application: 加班}
+mo: {username: test38-test,password: wemust@prod,application: 加班}
+
+test_overtime_application:
+ - {username: test38-test,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-06,starttime: 08:00,
+    endtime: 08:31,IDcard: 123456,remark: 測試數據,expect: 加班明细}
