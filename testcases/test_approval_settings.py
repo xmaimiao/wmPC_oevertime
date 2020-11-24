@@ -22,6 +22,8 @@ class Test_Approval_Settings:
         test_edit_the_fir_approval_datas = datas["test_edit_the_fir_approval"]
         test_edit_the_sec_approval_datas = datas["test_edit_the_sec_approval"]
         test_del_the_fir_approval_datas = datas["test_del_the_fir_approval"]
+        test_del_and_add_approval_group_members_datas = datas["test_del_and_add_approval_group_members"]
+        test_add_approval_group_members_datas = datas["test_add_approval_group_members"]
 
     _setup_datas = get_env()
     _working = _get_working()
@@ -95,3 +97,38 @@ class Test_Approval_Settings:
             search_user(data["user"]).wait_sleep(data["sleeps"]).\
             get_the_first_approval_process_T()
         assert result in data["expect"]
+
+
+    def test_get_approval_group(self):
+        '''
+        验证獲取審批組和其審批人員
+        '''
+        result = self.main.goto_approval_settings().\
+            goto_approval_group_setting().get_approval_group_all()
+        assert result == True
+
+    @pytest.mark.parametrize("data", test_del_and_add_approval_group_members_datas)
+    def test_del_and_add_approval_group_members(self,data):
+        '''
+        验证刪除審批組中的全部人員，再添加新人員
+        '''
+        result = self.main.goto_approval_settings().\
+            goto_approval_group_setting().edit_group_for_name(data["group_name"]).\
+            del_group_members().edit_group_members(data["members"]).\
+            click_save().wait_sleep(1).get_members_for_group_name(data["group_name"])
+        for member in data["members"]:
+            assert member in result
+
+    @pytest.mark.parametrize("data", test_add_approval_group_members_datas)
+    def test_add_approval_group_members(self,data):
+        '''
+        验证刪除審批組中的全部人員，再添加新人員
+        '''
+        result = self.main.goto_approval_settings().\
+            goto_approval_group_setting().edit_group_for_name(data["group_name"]).\
+            edit_group_members(data["members"]).click_save().\
+            wait_sleep(1).get_members_for_group_name(data["group_name"])
+        for member in data["members"]:
+            assert member in result
+
+

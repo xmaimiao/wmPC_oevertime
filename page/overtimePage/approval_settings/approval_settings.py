@@ -1,5 +1,6 @@
 from common.contants import approval_settings_dir
 from page.basepage import BasePage
+from page.overtimePage.approval_settings.approval_group_setting import Approval_Group_Setting
 from page.overtimePage.approval_settings.edit_approval_process import Edit_Approval_Process
 
 
@@ -60,8 +61,8 @@ class Approval_Settings(BasePage):
 
     def goto_approval_group_setting(self):
         '''
-
-        :return:
+        打開審批組設置
         '''
-        pass
+        self.step(approval_settings_dir,"goto_approval_group_setting")
+        return Approval_Group_Setting(self._driver)
 

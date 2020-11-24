@@ -27,3 +27,11 @@ edit_the_first_approval_process:
     locator: '//*[@class="tablelist"]//tbody/tr[1]/td[3]/span[contains(text(),"${user}")]/../../td[last()]//span[2]'
     action: click
 
+goto_approval_group_setting:
+  - by: xpath
+    locator: '//*[@id="myform"]/input[@class="button_1"]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@id="myform"]/input[@class="button_1"]'
+    action: click
+

@@ -66,6 +66,10 @@ approval_settings_dir = os.path.join(base_dir,'data/overtimePage/approval_settin
 
 edit_approval_process_dir = os.path.join(base_dir,'data/overtimePage/approval_settings/edit_approval_process.yaml')
 
+approval_group_setting_dir = os.path.join(base_dir,'data/overtimePage/approval_settings/approval_group_setting.yaml')
+
+add_or_edit_group_dir = os.path.join(base_dir,'data/overtimePage/approval_settings/add_or_edit_group.yaml')
+
 # 加班case
 test_overtime_application_dir = os.path.join(base_dir,'data/cases/test_overtime_application.yaml')
 

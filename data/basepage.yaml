@@ -4,7 +4,7 @@ switch:
   2: headless
   3: brower
   4: docker
-switch_default: 3
+switch_default: 1
 
 #docker容器環境切換：dev、uat、正式站
 docker_env:
