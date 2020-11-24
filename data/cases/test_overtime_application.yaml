@@ -1,8 +1,9 @@
-#uat密码wemust@Better  正式站：wemust@prod
-dev: {username: test11,password: wemust@dev,application: 加班}
-uat: {username: mai2,password: wemust@Better,application: 加班}
-mo: {username: test38-test,password: wemust@prod,application: 加班}
-
 test_overtime_application:
- - {username: test38-test,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-06,starttime: 08:00,
-    endtime: 08:31,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-15,starttime: 02:40,
+    endtime: 03:40,sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+
+test_the_overtimeSn_for_cancel:
+ - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202011130001,expect: 已撤銷}
+test_upload_supplementary_meterials:
+ - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202011190001,
+    excel_path: D:\PycharmProjects\wmPC_oevertime\excel\123.xls,expect: 補充資料}

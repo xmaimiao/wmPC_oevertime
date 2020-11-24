@@ -1,0 +1,28 @@
+upload_supplementary_meterials:
+#点击“补充资料”按钮
+  - by: xpath
+    locator: '//*[@class="xin_box button_1 cboxElement"]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="xin_box button_1 cboxElement"]'
+    action: click
+#点击“上传附件”按钮
+  - by: xpath
+    locator: '//*[@name="file"]/../label'
+    action: click
+
+# 上传页面点击“确认”按钮
+upload_save_click:
+  - by: xpath
+    locator: '//*[@class="subbox"]/input'
+    action: click
+
+close_poppage:
+  - by: xpath
+    locator: '//*[@id="cboxClose"]'
+    action: click
+
+get_approval_history_action:
+  - by: xpath
+    locator: '//*[@class="table table_user"]/tbody/tr[last()]/td[2]'
+    action: wait_display

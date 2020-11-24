@@ -1,0 +1,15 @@
+goto_pending_for_approval:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 "]/a[1]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tab_title_2 "]/a[1]'
+    action: click
+
+goto_approved:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 "]/a[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tab_title_2 "]/a[2]'
+    action: click

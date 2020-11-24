@@ -12,3 +12,13 @@ goto_overtime_approval:
   - by: xpath
     locator: '//*[@class="icon iconfont icon-jiaban-jiabanshenpi"]/../../span[contains(text(),"加班審批")]'
     action: click
+
+goto_overtime_approval_for_HR:
+  - by: xpath
+    locator: '//*[@class="icon iconfont icon-jiabanshenpihr_weixuanzhong"]/../../span[contains(text(),"加班審批(HR)")]'
+    action: click
+
+goto_approval_settings:
+  - by: xpath
+    locator: '//*[@class="icon iconfont icon-shenpi-shenpishezhi"]/../../span[contains(text(),"審批設置")]'
+    action: click

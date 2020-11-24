@@ -1,4 +1,0 @@
-goto_approved:
-  - by: xpath
-    locator: '//*[@class="tab_title_2"]/a[2]'
-    action: click

@@ -1,0 +1,6 @@
+test_get_the_news:
+ - {username: test300,password: wemust@dev,application: 加班,new_num: ['1',]}
+test_goto_overtime_for_news:
+ - {username: test300,password: wemust@dev,application: 加班,new_num: 1,expect: 申請人信息}
+test_get_the_read_news_of_application:
+   - {username: test302,password: wemust@dev,new_num: [1,2],application: 加班,expect0: 提交了材料,expect1: 提交了加班申請}

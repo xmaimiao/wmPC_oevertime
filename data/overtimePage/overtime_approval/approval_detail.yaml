@@ -1,0 +1,17 @@
+click_reminder_of_supplement:
+  - by: xpath
+    locator: '//*[@name="remind"]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@name="remind"]'
+    action: click
+
+close_poppage:
+  - by: xpath
+    locator: '//*[@id="cboxClose"]'
+    action: click
+
+get_approval_history_action:
+  - by: xpath
+    locator: '//*[@class="table table_user"]/tbody/tr[last()]/td[2]'
+    action: wait_display

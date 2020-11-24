@@ -1,0 +1,76 @@
+add_approval_process:
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: wait
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: click
+
+edit_the_fir_approval:
+#点击”添加审批“按钮
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: wait_click
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: click
+#点击1级审批下拉框
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../..//i'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../..//i'
+    action: click
+#选择审批流
+
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../..//label[contains(text(),"${approval1}")]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../..//label[contains(text(),"${approval1}")]'
+    action: click
+
+edit_the_sec_approval:
+#点击”添加审批“按钮
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: wait
+  - by: xpath
+    locator: '//span[contains(text(),"添加審批")]'
+    action: click
+#点击2级审批下拉框
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../..//i'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../..//i'
+    action: click
+#选择审批流
+
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../..//label[contains(text(),"${approval2}")]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../..//label[contains(text(),"${approval2}")]'
+    action: click
+
+del_the_fir_approval:
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../../../../../td[last()]/a'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"1")]/../../../../../td[last()]/a'
+    action: click
+
+del_the_sec_approval:
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../../../../../td[last()]/a'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="noSpan" and contains(text(),"2")]/../../../../../td[last()]/a'
+    action: click
+
+save_click:
+  - by: xpath
+    locator: '//*[@class="subbox"]/input[1]'
+    action: click

@@ -1,0 +1,15 @@
+goto_pending_for_approval_HR:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[1]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[1]'
+    action: click
+
+goto_approved_HR:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[2]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[2]'
+    action: click

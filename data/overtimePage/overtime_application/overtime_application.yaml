@@ -31,11 +31,17 @@ edit_endtime:
     locator: return document.getElementsByName("endDateType")[0];
     action: execute_js_click
   - by: tag name
+    locator: 1
+    action: sleep
+  - by: tag name
     locator: 'iframe'
     action: wait_and_iframe
-  - by: xpath
-    locator: '//*[@id="dpOkInput"]'
-    action: wait_click
+  - by: tag name
+    locator: 1
+    action: sleep
+#  - by: xpath
+#    locator: '//*[@id="dpOkInput"]'
+#    action: wait_click
   - by: xpath
     locator: '//*[@id="dpOkInput"]'
     action: click

@@ -1,0 +1,4 @@
+get_the_status_of_overtimeSn:
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]/span'
+    action: text

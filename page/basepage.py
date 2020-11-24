@@ -2,6 +2,9 @@ import json
 import logging
 import os
 from time import sleep
+
+import win32con
+import win32gui
 import yaml
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
@@ -204,10 +207,38 @@ class BasePage:
         '''
         self._driver.implicitly_wait(second)
 
+    def execute_script_scroll(self,script):
+        '''
+        滑動到元素可見
+        '''
+        logging.info(f"execute_script_scroll：{script}")
+        ele = self._driver.execute_script(f'{script}')
+        js4 = "arguments[0].scrollIntoView();"
+        self._driver.execute_script(js4, ele)
+
+    def upload_file(self,excel_path):
+        '''
+        上传文件
+        '''
+        # 找元素
+        # 一级窗口"#32770","打开"
+        dialog = win32gui.FindWindow("#32770", "打开")
+        # 向下传递
+        ComboBoxEx32 = win32gui.FindWindowEx(dialog, 0, "ComboBoxEx32", None)  # 二级
+        comboBox = win32gui.FindWindowEx(ComboBoxEx32, 0, "ComboBox", None)  # 三级
+        # 编辑按钮
+        edit = win32gui.FindWindowEx(comboBox, 0, 'Edit', None)  # 四级
+        # 打开按钮
+        button = win32gui.FindWindowEx(dialog, 0, 'Button', "打开(&O)")  # 二级
+
+        # 输入文件的绝对路径，点击“打开”按钮
+        win32gui.SendMessage(edit, win32con.WM_SETTEXT, None, excel_path)  # 发送文件路径
+        win32gui.SendMessage(dialog, win32con.WM_COMMAND, 1, button)  # 点击打开按钮
+
     def close(self):
         self._driver.quit()
 
-    def step(self,path,name):
+    def step(self,path,name) -> object:
         with open(path, encoding="utf-8") as f:
             steps = yaml.safe_load(f)[name]
         # ${}的參數轉化
@@ -253,6 +284,7 @@ class BasePage:
                     self.execute_script(step["locator"])
                 if "wait_and_iframe" == action:
                     self.wait_swith_to_iframe(step["by"], step["locator"])
-
+                if "execute_js_scroll" == action:
+                    self.execute_script_scroll(step["locator"])
 if __name__ == '__main__':
     BasePage()

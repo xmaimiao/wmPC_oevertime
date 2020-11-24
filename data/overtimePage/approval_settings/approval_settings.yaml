@@ -1,0 +1,29 @@
+search_user:
+#等待查詢框元素出現並傳入key
+  - by: xpath
+    locator: '//*[@name="key"]'
+    action: wait
+  - by: xpath
+    locator: document.getElementsByName("key")[0].value="${user}"
+    action: execute_js
+#點擊查詢按鈕
+  - by: xpath
+    locator: '//*[@class="filter"]/span[3]/input[1]'
+    action: click
+
+get_the_first_approval_process:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[3]/span[contains(text(),"${user}")]/../../td[last()-1]/span'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[3]/span[contains(text(),"${user}")]/../../td[last()-1]/span'
+    action: text
+
+edit_the_first_approval_process:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[3]/span[contains(text(),"${user}")]/../../td[last()]//span[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[3]/span[contains(text(),"${user}")]/../../td[last()]//span[2]'
+    action: click
+

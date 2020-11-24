@@ -1,0 +1,20 @@
+get_the_news:
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[${new_num}]/td//a'
+    action: wait_display
+
+goto_all_news:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[1]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[1]'
+    action: click
+
+goto_read:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[2]'
+    action: click

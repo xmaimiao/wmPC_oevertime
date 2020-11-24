@@ -17,3 +17,37 @@ quit:
     by: xpath
     locator: '//*[@class="link-button user-info"]/../../div[2]//li[last()]'
     action: click
+
+goto_news_list:
+  - by: xpath
+    locator: '//*[@class="p-relative"]/img'
+    action: click
+
+goto_OA_approval:
+  - by: xpath
+    locator: '//*[@class="left"]//a[contains(text(),"審批")]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="left"]//a[contains(text(),"審批")]'
+    action: click
+
+get_news:
+  - by: xpath
+    locator: '//*[@class="system-info-cpn"]/ul/li[${new_num}]/div/div[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="system-info-cpn"]/ul/li[${new_num}]/div/div[2]'
+    action: text
+
+goto_overtime_for_news:
+  - by: xpath
+    locator: '//*[@class="system-info-cpn"]/ul/li[${new_num}]/div/div[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="system-info-cpn"]/ul/li[${new_num}]/div/div[2]'
+    action: click
+
+get_overtime_title:
+  - by: xpath
+    locator: '//*[@class="popcontent"]/div[1]/span[1]'
+    action: wait_display

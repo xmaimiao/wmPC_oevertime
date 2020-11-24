@@ -1,4 +1,18 @@
+#因加班和考試應用中“首頁”元素定位不一致，故取其共同點
+goto_index:
+  - by: xpath
+    locator: '//*[contains(text(),"首頁")]'
+    action: click
+
 goto_OA_Approval:
   - by: xpath
     locator: '//*[@class="nav"]/li[3]/a/span'
+    action: click
+
+goto_news_list_in_application:
+  - by: xpath
+    locator: '//*[@id="header_msg"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@id="header_msg"]'
     action: click

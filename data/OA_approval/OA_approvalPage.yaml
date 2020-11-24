@@ -5,3 +5,11 @@ goto_ALL_approvals:
   - by: xpath
     locator: '//*[@class="nav_left"]/li[1]//span'
     action: click
+
+goto_Overtime_approvals:
+  - by: xpath
+    locator: '//ul[@class="nav_left"]/li[4]//span'
+    action: wait_click
+  - by: xpath
+    locator: '//ul[@class="nav_left"]/li[4]//span'
+    action: click

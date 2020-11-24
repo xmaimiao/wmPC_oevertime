@@ -1,0 +1,8 @@
+get_the_news_read:
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[${new_num}]/td//a'
+    action: wait_display
+goto_overtime_for_news_read:
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[${new_num}]/td//a'
+    action: wait_display

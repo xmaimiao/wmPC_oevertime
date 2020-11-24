@@ -10,7 +10,7 @@ class Application(BasePage):
         進入加班應用
         '''
         self._params["application"] = application
-        self.step(application_dir, "overtime")
+        self.step(application_dir, "goto_overtime")
         return OvertimePage(self._driver)
 
 

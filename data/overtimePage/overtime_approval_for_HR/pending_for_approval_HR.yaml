@@ -1,0 +1,15 @@
+the_overtimeSn_for_approved_HR:
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    action: click
+
+the_overtimeSn_for_not_approved_HR:
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    action: click

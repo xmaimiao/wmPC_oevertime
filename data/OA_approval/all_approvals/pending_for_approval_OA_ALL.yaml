@@ -1,0 +1,4 @@
+goto_details_of_overtimeSn_OA_ALL:
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]'
+    action: click
