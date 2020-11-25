@@ -1,0 +1,32 @@
+get_approval_group_all:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr'
+    action: len
+
+get_group_name:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[${i}]/td[1]'
+    action: text
+
+
+get_roup_members:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[${i}]/td[2]'
+    action: text
+
+edit_group_for_name:
+  - by: xpath
+    locator: '//*[contains(text(),"${group_name}")]/../td[last()]/a[1]/span[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[contains(text(),"${group_name}")]/../td[last()]/a[1]/span[2]'
+    action: click
+
+get_members_for_group_name:
+  - by: xpath
+    locator: '//*[contains(text(),"${group_name}")]/../td[2]'
+    action: wait
+  - by: xpath
+    locator: '//*[contains(text(),"${group_name}")]/../td[2]'
+    action: text
+

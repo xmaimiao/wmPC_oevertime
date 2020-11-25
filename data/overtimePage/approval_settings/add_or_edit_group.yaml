@@ -1,0 +1,75 @@
+get_approval_group_all:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr'
+    action: len
+
+edit_group_name:
+  - by: xpath
+    locator: '//*[@name="name"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@name="name"]'
+    action: click
+  - by: xpath
+    locator: '//*[@name="name"]'
+    action: clear
+  - by: xpath
+    locator: '//*[@name="name"]'
+    action: send
+    value: ${group_name}
+
+
+edit_english_name:
+  - by: xpath
+    locator: '//*[@name="nameEn"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@name="nameEn"]'
+    action: click
+  - by: xpath
+    locator: '//*[@name="nameEn"]'
+    action: clear
+  - by: xpath
+    locator: '//*[@name="nameEn"]'
+    action: send
+    value: ${english_name}
+
+get_group_members_for_del:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class=" tags"]//span[@class="del"]'
+    action: len
+
+del_group_members:
+  - by: xpath
+    locator: '//*[@class=" tags"]/span[1]/span[@class="del"]'
+    action: click
+
+edit_group_members:
+  - by: xpath
+    locator: '//*[@name="auditUser"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@name="auditUser"]'
+    action: send
+    value: ${member}
+#等待1s，選擇下拉框中的第一行人員
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="autocomplete-suggestion"][1]'
+    action: click
+
+edit_remark:
+  - by: xpath
+    locator: '//*[@name="remark"]'
+    action: send
+    value: ${remark}
+
+click_save:
+  - by: xpath
+    locator: '//*[@class="subbox"]/input[1]'
+    action: click
