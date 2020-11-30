@@ -5,12 +5,12 @@ mo: {username: test38-test,password: wemust@prod,application: 加班}
 
 test_the_fir_approval:
  - {username: test38-test,password: wemust@prod,application: 加班,user: test300}
-# - {username: test38-test,password: wemust@prod,application: 加班,user: mai4}
+ - {username: test38-test,password: wemust@prod,application: 加班,user: test304}
 # - {username: test38-test,password: wemust@prod,application: 加班,user: test300}
 
 test_edit_the_fir_approval:
 # - {username: test38-test,password: wemust@prod,application: 加班,user: test300,approvals: ['1109加班测试1',],action: edit,sleeps: 1,expect: 1109加班测试1}
- - {username: test38-test,password: wemust@prod,application: 加班,user: test300,approvals: ['4/20测试组1',],action: edit,sleeps: 1,expect: 4/20测试组1}
+ - {username: test38-test,password: wemust@prod,application: 加班,user: test304,approvals: ['4/20测试组1',],action: edit,sleeps: 1,expect: 4/20测试组1}
 
 test_edit_the_sec_approval:
 # - {username: test38-test,password: wemust@prod,application: 加班,user: test300,approvals: ['1109加班测试2'],action: edit,sleeps: 1,expect: '1109加班测试1 -- 1109加班测试2'}
@@ -18,7 +18,7 @@ test_edit_the_sec_approval:
 
 test_del_the_fir_approval:
 #多个审批流：111 -- 111
-- {sername: test38-test,password: wemust@prod,application: 加班,user: mai4,approvals: ['4/20加班测试1',]}
+- {sername: test38-test,password: wemust@prod,application: 加班,user: test304,approvals: ['1109加班测试1',]}
 
 test_del_and_add_approval_group_members:
 - {sername: test38-test,password: wemust@prod,application: 加班,group_name: 4/20加班测试2,members: ["test303",]}

@@ -63,7 +63,7 @@ class Test_Approval:
         '''
         result = self.main. \
             goto_login(). \
-            username(data["username"]).password(data["password"]).save(). \
+            username(data["username"]).password(self._setup_datas["password"]).save(). \
             goto_application(). \
             goto_overtime(data["application"]). \
             goto_overtime_application(). \

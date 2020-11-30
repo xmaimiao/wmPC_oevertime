@@ -4,7 +4,7 @@ switch:
   2: headless
   3: brower
   4: docker
-switch_default: 1
+switch_default: 3
 
 #docker容器環境切換：dev、uat、正式站
 docker_env:
@@ -14,6 +14,6 @@ docker_env:
 default: uat
 
 #uat密码wemust@Better  正式站：wemust@prod
-dev: {username: test304,password: wemust@dev,application: 加班}
-uat: {username: mai2,password: wemust*2020,application: 加班}
+dev: {username: test300,password: wemust@dev,application: 加班}
+uat: {username: test304,password: wemust*2020,application: 加班}
 mo: {username: test38-test,password: wemust@prod,application: 加班}

@@ -33,8 +33,12 @@ class Approval_Settings(BasePage):
         '''
         獲取第一行數據的審批流text,返回True  False
         '''
-
-        return  self.step(approval_settings_dir,"get_the_first_approval_process")
+        try:
+            result =   self.step(approval_settings_dir,"get_the_first_approval_process")
+            print(f"审批流为：{result}")
+            return True
+        except ellipsis as e:
+            return False
 
 
     def edit_the_first_approval_process(self,approval_list,action=None):

@@ -1,7 +1,7 @@
 #【注意】這裏的賬號不能改動，申請人-上級-主管關係已固定
 test_overtime_application:
- - {username: test300,password: wemust@2020,application: 加班,UserTel: 8585,startDate: 2020-11-20,starttime: 03:40,
-    endtime: 04:40,sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+ - {username: test304,password: wemust@2020,application: 加班,UserTel: 8585,startDate: 2020-11-25,starttime: 04:40,
+    endtime: 05:40,sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
 
 test_reminder_of_supplement_B:
   - {username: test301,password: wemust@2020,application: 加班,overtimeSn: OT202011130001,expect: 補充資料提醒}

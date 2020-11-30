@@ -69,7 +69,7 @@ class Test_Approval_Settings:
             edit_the_first_approval_process(data["approvals"],data["action"]).\
             edit_the_fir_approval(data["approvals"][0]).save_click().\
             search_user(data["user"]).wait_sleep(data["sleeps"]).get_the_first_approval_process()
-        assert result in data["expect"]
+        assert result == True
 
     @pytest.mark.parametrize("data", test_edit_the_sec_approval_datas)
     def test_edit_the_sec_approval(self,data):
@@ -83,7 +83,7 @@ class Test_Approval_Settings:
             edit_the_first_approval_process(data["approvals"],data["action"]).\
             edit_the_sec_approval(data["approvals"][0]).save_click().\
             search_user(data["user"]).wait_sleep(data["sleeps"]).get_the_first_approval_process()
-        assert result in data["expect"]
+        assert result == True
 
     @pytest.mark.parametrize("data", test_del_the_fir_approval_datas)
     def test_del_the_fir_approval(self,data):
@@ -94,9 +94,9 @@ class Test_Approval_Settings:
             search_user(data["user"]).\
             edit_the_first_approval_process(data["approvals"]).\
             del_the_fir_approval().save_click(). \
-            search_user(data["user"]).wait_sleep(data["sleeps"]).\
+            search_user(data["user"]).wait_sleep(1).\
             get_the_first_approval_process_T()
-        assert result in data["expect"]
+        assert result == True
 
 
     def test_get_approval_group(self):
