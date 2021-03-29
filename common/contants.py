@@ -30,6 +30,14 @@ details_of_overtimeSn_OA_Overtime_dir = os.path.join(base_dir,'data/OA_approval/
 
 approved_OA_Overtime_dir = os.path.join(base_dir,'data/OA_approval/overtime_approvals/approved_OA_Overtime.yaml')
 
+overtime_approvals_HR_dir = os.path.join(base_dir,'data/OA_approval/overtime_approvals_for_HR/overtime_approvals_HR.yaml')
+
+pending_for_approval_OA_Overtime_HR_dir = os.path.join(base_dir,'data/OA_approval/overtime_approvals_for_HR/pending_for_approval_OA_Overtime_HR.yaml')
+
+details_of_overtimeSn_OA_Overtime_HR_dir = os.path.join(base_dir,'data/OA_approval/overtime_approvals_for_HR/details_of_overtimeSn_OA_Overtime_HR.yaml')
+
+approved_OA_Overtime_HR_dir = os.path.join(base_dir,'data/OA_approval/overtime_approvals_for_HR/approved_OA_Overtime_HR.yaml')
+
 select_staff_dir = os.path.join(base_dir,'data/select_staff.yaml')
 
 # 消息中心
@@ -62,6 +70,10 @@ pending_for_approval_HR_dir = os.path.join(base_dir,'data/overtimePage/overtime_
 
 approved_HR_dir = os.path.join(base_dir,'data/overtimePage/overtime_approval_for_HR/approved_HR.yaml')
 
+application_HR_dir = os.path.join(base_dir,'data/overtimePage/overtime_approval_for_HR/application_HR.yaml')
+
+approval_detail_HR_dir = os.path.join(base_dir,'data/overtimePage/overtime_approval_for_HR/approval_detail_HR.yaml')
+
 approval_settings_dir = os.path.join(base_dir,'data/overtimePage/approval_settings/approval_settings.yaml')
 
 edit_approval_process_dir = os.path.join(base_dir,'data/overtimePage/approval_settings/edit_approval_process.yaml')
@@ -83,6 +95,20 @@ test_approval_OA_all_dir = os.path.join(base_dir,'data/cases/test_approval_OA_al
 
 test_approval_OA_overtime_dir = os.path.join(base_dir,'data/cases/test_approval_OA_overtime.yaml')
 
+test_story703_uat_dir = os.path.join(base_dir,'data/cases/test_story703_uat.yaml')
+
+test_overtime_approval_HR_dir = os.path.join(base_dir,'data/cases/test_overtime_approval_HR.yaml')
+
+test_bug29179_dir = os.path.join(base_dir,'data/cases/test_bug29179.yaml')
+
+test_bug29184_dir = os.path.join(base_dir,'data/cases/test_bug29184.yaml')
+
+test_story703_story429_prod_dir = os.path.join(base_dir,'data/cases/test_story703_story429/test_story703_story429_prod.yaml')
+
+test_bug29392_dir = os.path.join(base_dir,'data/cases/test_bug29392.yaml')
+
+test_bug29467_dir = os.path.join(base_dir,'data/cases/test_bug29467.yaml')
+
 
 # 消息中心case
 test_news_list_dir = os.path.join(base_dir,'data/cases/news_list/test_news_list.yaml')
@@ -91,6 +117,8 @@ test_news_list_dir = os.path.join(base_dir,'data/cases/news_list/test_news_list.
 test_approval_OA_ALL_dir = os.path.join(base_dir,'data/cases/OA_approval/test_approval_OA_ALL.yaml')
 
 test_approval_OA_Overtime_dir = os.path.join(base_dir,'data/cases/OA_approval/test_approval_OA_Overtime.yaml')
+
+test_approval_OA_Overtime_HR_dir = os.path.join(base_dir,'data/cases/OA_approval/test_approval_OA_Overtime_HR.yaml')
 
 
 

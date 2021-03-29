@@ -16,3 +16,43 @@ goto_news_list_in_application:
   - by: xpath
     locator: '//*[@id="header_msg"]'
     action: click
+
+logout_for_fir:
+#點擊右上角個人姓名
+  - by: xpath
+    locator: '//*[@class="item user hasSecnav"]//span'
+    action: click
+  - by: xpath
+    locator: '//*[@class="item user hasSecnav"]/div//li[last()]/a'
+    action: click
+
+logout_for_sec:
+#點擊右上角展開三角符號
+  - by: xpath
+    locator: '//*[@class="link-button user-info"]/i'
+    action: click
+#點擊“退出登錄”
+  - by: xpath
+    locator: '//*[@class="right"]/div[2]/div[2]//li[last()]'
+    action: click
+
+logout_for_index:
+#點擊右上角展開三角符號
+  - by: xpath
+    locator: '//*[@class="link-button user-info"]/span'
+    action: click
+#點擊“退出登錄”
+  - by: xpath
+    locator: '//*[@class="right"]/div[2]/div[2]//li[contains(text(),"退出系統")]'
+    action: click
+
+
+logout_for_OA:
+#點擊右上角展開三角符號
+  - by: xpath
+    locator: '//*[@id="header_account"]/span'
+    action: click
+#點擊“退出登錄”
+  - by: xpath
+    locator: '//*[@id="header_account"]/../div//a[contains(text(),"退出系統")]'
+    action: click

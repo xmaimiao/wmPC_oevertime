@@ -5,6 +5,10 @@ from page.basepage import BasePage
 
 class Details_Of_OvertimeSn_OA_ALL(BasePage):
 
+    def wait_sleep(self,sleeps):
+        self.sleep(sleeps)
+        return self
+
     def agree_overtime_work_agreement(self):
         '''
         同意超時工作協議書
@@ -62,4 +66,12 @@ class Details_Of_OvertimeSn_OA_ALL(BasePage):
     def goto_approved_OA_ALL(self):
         self.step(all_approvals_dir,"goto_approved_OA_ALL")
         return Approved_OA_ALL(self._driver)
+
+    def back_to_pending_for_approval_OA_ALL(self):
+        '''
+        打開待審批頁面
+        '''
+        self.step(all_approvals_dir, "goto_pending_for_approval_OA_ALL")
+        from page.OA_approvel.all_approvals.pending_for_approval_OA_ALL import Pending_For_Approval_OA_ALL
+        return Pending_For_Approval_OA_ALL(self._driver)
 

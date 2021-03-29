@@ -20,42 +20,50 @@ edit_startDate:
 
 edit_starttime:
   - by: xpath
-    locator: document.getElementsByName("startDateType")[0].value="${starttime}";
+    locator: 'a = document.getElementsByName("startDateType")[0]; a.removeAttribute("readonly")'
+    action: execute_js
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: 'document.getElementsByName("startDateType")[0].value="${starttime}";'
     action: execute_js
 
 edit_endtime:
   - by: xpath
-    locator: document.getElementsByName("endDateType")[0].value="${endtime}";
+    locator: 'a = document.getElementsByName("endDateType")[0]; a.removeAttribute("readonly")'
     action: execute_js
   - by: xpath
-    locator: return document.getElementsByName("endDateType")[0];
-    action: execute_js_click
-  - by: tag name
     locator: 1
     action: sleep
-  - by: tag name
-    locator: 'iframe'
-    action: wait_and_iframe
-  - by: tag name
-    locator: 1
-    action: sleep
-#  - by: xpath
-#    locator: '//*[@id="dpOkInput"]'
-#    action: wait_click
   - by: xpath
-    locator: '//*[@id="dpOkInput"]'
-    action: click
+    locator: 'document.getElementsByName("endDateType")[0].value="${endtime}";'
+    action: execute_js
+
 
 edit_IDcard:
-  - by: xpath
-    locator: '//*[@Name="applicantCertificateValue2"]'
-    action: wait
-  - by: xpath
-    locator: document.getElementsByName("applicantCertificateValue2")[0].value="${IDcard}";
-    action: execute_js
+#  - by: xpath
+#    locator: '//*[@Name="applicantCertificateValue2"]'
+#    action: wait
+#  - by: xpath
+#    locator: '//*[@Name="applicantCertificateValue2"]'
+#    action: clear
+#  - by: xpath
+#    locator: document.getElementsByName("applicantCertificateValue2")[0].value="${IDcard}";
+#    action: execute_js
   - by: xpath
     locator: return document.getElementsByClassName("submit")[2];
     action: execute_js_click
+
+get_IDcard:
+  - by: xpath
+    locator: '//*[@Name="applicantCertificateValue2"]'
+    action: wait_display
+
+close_page:
+  - by: xpath
+    locator: '//*[@id="cboxClose"]'
+    action: click
 
 edit_remark:
   - by: xpath
@@ -70,4 +78,19 @@ upload_attachment:
 save_click:
   - by: xpath
     locator: '//*[@class="subbox"]/a'
+    action: click
+
+get_tips:
+  - by: xpath
+    locator: '//*[@class="layui-layer-content"]'
+    action: text
+
+close_tips:
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn1"]'
+    action: click
+
+click_tips:
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn0"]'
     action: click

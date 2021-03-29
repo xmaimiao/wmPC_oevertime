@@ -10,3 +10,9 @@ class Approved_OA_ALL(BasePage):
         '''
         self._params["overtimeSn"] = overtimeSn
         return self.step(approved_OA_ALL_dir,"get_the_status_of_overtimeSn")
+
+    def get_the_status_of_the_fir(self):
+        '''
+        第一行数据获取该订单的状态
+        '''
+        return self.step(approved_OA_ALL_dir,"get_the_status_of_the_fir")

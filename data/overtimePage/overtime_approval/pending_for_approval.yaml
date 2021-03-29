@@ -1,17 +1,38 @@
 the_overtimeSn_for_approved:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[2]/a[contains(text(),"批准")]'
     action: wait_click
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    action: click
+
+the_fir_for_approved:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[2]/a'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[2]/a'
+    action: click
+
+click_tips_confirm:
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn0"]'
     action: click
 
 the_overtimeSn_for_not_approved:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
     action: wait_click
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    action: click
+
+the_fir_for_not_approved:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[3]/a'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[3]/a'
     action: click
 
 goto_approval_detail:
@@ -22,3 +43,32 @@ goto_approval_detail:
     locator: '//*[contains(text(),"${overtimeSn}")]'
     action: click
 
+check_all:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="input_check_all"]/../ins'
+    action: click
+
+
+get_total:
+  - by: xpath
+    locator: '//*[@class="info"]'
+    action: text
+
+batch_agree:
+  - by: xpath
+    locator: '//*[@class="panel-heading tit_big"]/div/a[contains(text(),"批量批准")]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="panel-heading tit_big"]/div/a[contains(text(),"批量批准")]'
+    action: click
+
+goto_the_fir_approval_detail:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[1]/a'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[1]/a'
+    action: click

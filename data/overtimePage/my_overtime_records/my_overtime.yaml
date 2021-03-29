@@ -1,10 +1,7 @@
 get_page_title:
   - by: xpath
     locator: '//*[@class="tab_title_2"]/a'
-    action: wait
-  - by: xpath
-    locator: '//*[@class="tab_title_2"]/a'
-    action: text
+    action: wait_display
 
 the_first_overtime_cancel:
 #等待“撤銷”按鈕元素出現，並點擊
@@ -15,9 +12,12 @@ the_first_overtime_cancel:
     locator: '//*[@class="tablelist"]/tbody/tr[1]/td[last()]//li[2]/a'
     action: click
 #點擊彈出框，二次確認
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn0"]'
+    action: click
 #獲取第一條數據的加班狀態
   - by: xpath
-    locator: '//*[@class="tablelist"]/tbody/tr[1]/td[last()-1]/span'
+    locator: '//*[@class="tablelist"]/tbody/tr[1]/td[last()-2]/span'
     action: text
 
 the_overtimeSn_for_cancel:
@@ -33,15 +33,15 @@ the_overtimeSn_for_cancel:
     action: click
 #獲取第一條數據的加班狀態
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-1]/span'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-2]/span'
     action: text
 
 get_the_fir_status:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-1]/span'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-2]/span'
     action: wait
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-1]/span'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-2]/span'
     action: text
 
 get_the_fir_overtimeSn:

@@ -4,8 +4,8 @@ uat: {username: mai2,password: wemust@Better,application: 加班}
 mo: {username: test38-test,password: wemust@prod,application: 加班}
 
 test_the_fir_approval:
- - {username: test38-test,password: wemust@prod,application: 加班,user: test300}
- - {username: test38-test,password: wemust@prod,application: 加班,user: test304}
+ - {username: test38-test,password: wemust@prod,application: 加班,user: test500}
+# - {username: test38-test,password: wemust@prod,application: 加班,user: test304}
 # - {username: test38-test,password: wemust@prod,application: 加班,user: test300}
 
 test_edit_the_fir_approval:

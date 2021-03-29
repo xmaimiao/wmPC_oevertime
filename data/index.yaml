@@ -51,3 +51,13 @@ get_overtime_title:
   - by: xpath
     locator: '//*[@class="popcontent"]/div[1]/span[1]'
     action: wait_display
+
+get_index_ele_fir:
+  - by: xpath
+    locator: '//*[@class="header_right"]/ul[@class="nav"]/li[2]/a/span'
+    action: text
+
+get_index_ele_sec:
+  - by: xpath
+    locator: '//*[@class="left"]/a[1]'
+    action: text

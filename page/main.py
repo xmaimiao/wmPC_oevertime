@@ -3,6 +3,7 @@ from common.contants import main1_dir, basepage_dir, overtimePage_dir, index_dir
 from page.OA_approvel.OA_approvalPage import OA_Approval
 from page.OA_approvel.all_approvals.all_approvals import ALL_Approvals
 from page.OA_approvel.overtime_approvals.overtime_approvals import Overtime_Approvals
+from page.OA_approvel.overtime_approvals_for_HR.overtime_approvals_HR import Overtime_Approvals_HR
 from page.basepage import BasePage, _get_working
 from page.index import Index
 from page.loginpage import Login
@@ -17,6 +18,10 @@ class Main(BasePage):
         env = yaml.safe_load(f)
         if _working != "port":
             _base_url = env["docker_env"][env["default"]]
+
+    def wait_sleep(self,sleeps):
+        self.sleep(sleeps)
+        return self
 
     def goto_login(self):
         '''
@@ -68,7 +73,7 @@ class Main(BasePage):
         '''
         打開”加班審批HR“頁面
         '''
-        self.step(overtimePage_dir,"goto_overtime_approvalfor_HR")
+        self.step(overtimePage_dir,"goto_overtime_approval_for_HR")
         from page.overtimePage.overtime_approval_for_HR.overtime_approval_for_HR import Overtime_Approval_For_HR
         return Overtime_Approval_For_HR(self._driver)
 
@@ -112,10 +117,17 @@ class Main(BasePage):
 
     def goto_Overtime_approvals(self):
         '''
-        打開加班審批菜單
+        打開加班審批菜單\OA
         '''
         self.step(OA_approvalPage_dir,"goto_Overtime_approvals")
         return Overtime_Approvals(self._driver)
+
+    def goto_Overtime_approvals_HR(self):
+        '''
+        打開加班審批菜單(HR)\OA
+        '''
+        self.step(OA_approvalPage_dir,"goto_Overtime_approvals_HR")
+        return Overtime_Approvals_HR(self._driver)
 
     def get_news(self,new_numlist):
         '''
@@ -145,3 +157,30 @@ class Main(BasePage):
         self._driver.switch_to.window(all_pages[-1])  # 切换至最后一个窗口
         return (self.step(index_dir,"get_overtime_title")).text
 
+    def logout_for_fir(self):
+        '''
+        一期應用中退出登錄
+        '''
+        self.step(main1_dir,"logout_for_fir")
+        return Login(self._driver)
+
+    def logout_for_sec(self):
+        '''
+        二期應用中退出登錄
+        '''
+        self.step(main1_dir,"logout_for_sec")
+        return Login(self._driver)
+
+    def logout_for_index(self):
+        '''
+        首页中退出登錄
+        '''
+        self.step(main1_dir,"logout_for_index")
+        return Login(self._driver)
+
+    def logout_for_OA(self):
+        '''
+        OA中退出登錄
+        '''
+        self.step(main1_dir,"logout_for_OA")
+        return Login(self._driver)

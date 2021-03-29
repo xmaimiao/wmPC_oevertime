@@ -33,7 +33,7 @@ class OvertimePage(BasePage):
         '''
         打開”加班審批HR“頁面
         '''
-        self.step(overtimePage_dir,"goto_overtime_approvalfor_HR")
+        self.step(overtimePage_dir,"goto_overtime_approval_for_HR")
         return Overtime_Approval_For_HR(self._driver)
 
     def goto_approval_settings(self):

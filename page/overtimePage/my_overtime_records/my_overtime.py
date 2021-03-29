@@ -6,11 +6,20 @@ from page.overtimePage.my_overtime_records.application_detail import Application
 
 
 class My_Overtime(BasePage):
+
+    def wait_sleep(self,sleeps):
+        self.sleep(sleeps)
+        return self
+
     def get_page_title(self):
         '''
         獲取頁面text"加班明細”
         '''
-        return self.step(my_overtime_dir,"get_page_title")
+        try:
+            self.step(my_overtime_dir,"get_page_title")
+            return True
+        except Exception as e:
+            return False
 
     def the_first_overtime_cancel(self):
         '''
@@ -55,3 +64,7 @@ class My_Overtime(BasePage):
             return Application_Detail(self._driver)
         except Exception as e:
             print(f"加班单号不存在：{overtimeSn}")
+
+    def goto_main(self):
+        from page.main import Main
+        return Main(self._driver)

@@ -10,7 +10,7 @@ class Overtime_Approval(BasePage):
         '''
         打開待審批頁面
         '''
-        self.step(overtime_approval_dir,"goto_pending_for_approval")
+        # self.step(overtime_approval_dir,"goto_pending_for_approval")
         return Pending_For_Approval(self._driver)
 
     def goto_approved(self):

@@ -65,3 +65,15 @@ class Index(BasePage):
         self._driver.switch_to.window(all_pages[-1])  # 切换至最后一个窗口
         return (self.step(index_dir,"get_overtime_title")).text
 
+    def get_index_ele_fir(self):
+        '''
+        獲取應用-“首頁”元素，驗證登錄成功，一期
+        '''
+        return self.step(index_dir, "get_index_ele_fir")
+
+    def get_index_ele_sec(self):
+        '''
+        獲取應用-“首頁”元素，驗證登錄成功，二期
+        '''
+        return self.step(index_dir, "get_index_ele_sec")
+

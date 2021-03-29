@@ -1,7 +1,15 @@
 get_the_overtimeSn_status:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-1]/span'
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()-1]/span'
     action: wait
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()-1]/span'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()-1]/span'
+    action: text
+
+get_the_fir_status:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()-1]/span'
+    action: wait
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()-1]/span'
     action: text

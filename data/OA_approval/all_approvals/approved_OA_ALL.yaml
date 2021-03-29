@@ -2,3 +2,8 @@ get_the_status_of_overtimeSn:
   - by: xpath
     locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]/span'
     action: text
+
+get_the_status_of_the_fir:
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[1]/td[last()]/span'
+    action: text

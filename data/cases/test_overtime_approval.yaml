@@ -1,7 +1,11 @@
+test_the_fir_for_approved:
+  - {username: test501,password: wemust@prod,application: 加班,expect: 批准}
+test_the_fir_for_approved_tips:
+
 test_the_overtimeSn_for_approved:
-  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202011090005,expect: 批准}
+  - {username: test501,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 批准}
 
 test_the_overtimeSn_for_not_approved:
-  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202011090005,expect: 不批准}
+  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 不批准}
 test_reminder_of_supplement:
- - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202011130001,expect: 補充資料提醒}
+ - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 補充資料提醒}

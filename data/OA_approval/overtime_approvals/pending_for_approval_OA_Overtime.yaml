@@ -2,3 +2,22 @@ goto_details_of_overtimeSn_OA_Overtime:
   - by: xpath
     locator: '//*[contains(text(),"${overtimeSn}")]'
     action: click
+goto_details_of_the_fir_OA_Overtime:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[1]/td//span[contains(text(),"OT")]'
+    action: click
+get_the_OTid_fir_OA_Overtime:
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[1]/td[1]//span'
+    action: text
+
+get_the_fir_applicant_OA_Overtime:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="tablelist"]/tbody/tr[1]/td[4]/span'
+    action: text

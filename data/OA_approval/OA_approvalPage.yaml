@@ -13,3 +13,19 @@ goto_Overtime_approvals:
   - by: xpath
     locator: '//ul[@class="nav_left"]/li[4]//span'
     action: click
+
+goto_Overtime_approvals_HR:
+  - by: xpath
+    locator: '//ul[@class="nav_left"]/li[last()]//span'
+    action: wait_click
+  - by: xpath
+    locator: '//ul[@class="nav_left"]/li[last()]//span'
+    action: click
+
+get_ele_of_ALL_approvals_OA:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//ul[@class="nav_left"]/li[4]//span'
+    action: ele_status

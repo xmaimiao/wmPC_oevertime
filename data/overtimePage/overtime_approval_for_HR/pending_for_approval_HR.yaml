@@ -1,15 +1,54 @@
 the_overtimeSn_for_approved_HR:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[3]/a[contains(text(),"批准")]'
     action: wait_click
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[2]/a[contains(text(),"批准")]'
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[3]/a[contains(text(),"批准")]'
+    action: click
+
+the_fir_for_approved_HR:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[3]/a'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[3]/a'
     action: click
 
 the_overtimeSn_for_not_approved_HR:
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[contains(text(),"${overtimeSn}")]/../../../../td[last()]//li[4]/a[text()="不批准"]'
+    action: action_click
+
+the_fir_for_not_approved_HR:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[4]/a'
     action: wait_click
   - by: xpath
-    locator: '//*[contains(text(),"${overtimeSn}")]/../../../td[last()]//li[3]/a[contains(text(),"不批准")]'
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[4]/a'
     action: click
+
+click_tips_confirm_HR:
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn0"]'
+    action: click
+
+goto_the_fir_approval_detail_HR:
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[1]/a'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@class="tablelist"]//tbody/tr[1]/td[last()]//li[1]/a'
+    action: click
+
+goto_application_HR:
+  - by: xpath
+    locator: '//*[@class="btn btn-default"]'
+    action: click
+
+get_ele_of_application:
+  - by: xpath
+    locator: '//*[@class="btn btn-default"]'
+    action: wait_display

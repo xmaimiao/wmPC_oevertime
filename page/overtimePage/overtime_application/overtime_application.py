@@ -79,4 +79,41 @@ class Overtime_Application(BasePage):
         '''
         self._params["IDcard"] = IDcard
         self.step(overtime_application_dir,"edit_IDcard")
+        return self
+
+    def get_IDcard(self):
+        '''
+        獲取份證/護照編號
+        '''
+        ele = self.step(overtime_application_dir,"get_IDcard")
+        self.step(overtime_application_dir, "close_page")
+        return ele.get_attribute("value")
+
+    def get_tips(self):
+        '''
+        獲取溫馨提示：閣下申請之加班時間段屬於 辦公時間內/周末/公眾假期, 請注意並確認是否繼續申請。
+        '''
+        try:
+            text = self.step(overtime_application_dir,"get_tips")
+            print(f"溫馨提示：{text}")
+            self.step(overtime_application_dir, "close_tips")
+            return True
+        except Exception as e:
+            return False
+
+    def click_tips(self):
+        '''
+        點擊溫馨提示
+        '''
+        try:
+            self.step(overtime_application_dir,"click_tips")
+            return self
+        except Exception as e:
+            print("没有tips！")
+            raise
+
+    def goto_my_overtime(self):
+        '''
+        打開我的加班-加班明細頁面
+        '''
         return My_Overtime(self._driver)

@@ -10,20 +10,23 @@ def get_env():
     '''
     with open(basepage_dir, encoding="utf-8") as f:
         datas = yaml.safe_load(f)
-        wm_env = datas["default"]
-        setup_datas = datas[wm_env]
-        return setup_datas
+        # 获取basepage.yaml中设置的环境变量
+        wm_env =  datas["default"]
+        # 根据环境变量取对应的账号和密码
+        user_env = datas["user"][wm_env]
+        # 根据环境变量取对应的睡眠时间
+        sleep_env = datas["sleeps"][wm_env]
+        return user_env,sleep_env
 
-class Test_Approval_Settings:
-
+def get_data(option):
+    '''
+    获取yaml测试数据
+    '''
     with open(test_approval_settings_dir, encoding="utf-8") as f:
-        datas = yaml.safe_load(f)
-        test_the_fir_approval_datas = datas["test_the_fir_approval"]
-        test_edit_the_fir_approval_datas = datas["test_edit_the_fir_approval"]
-        test_edit_the_sec_approval_datas = datas["test_edit_the_sec_approval"]
-        test_del_the_fir_approval_datas = datas["test_del_the_fir_approval"]
-        test_del_and_add_approval_group_members_datas = datas["test_del_and_add_approval_group_members"]
-        test_add_approval_group_members_datas = datas["test_add_approval_group_members"]
+        datas = yaml.safe_load(f)[option]
+        return datas
+    
+class Test_Approval_Settings:
 
     _setup_datas = get_env()
     _working = _get_working()
@@ -39,9 +42,9 @@ class Test_Approval_Settings:
             非調試端口用
             '''
             self.main = Main().goto_login(). \
-                username(self._setup_datas["username"]).password(self._setup_datas["password"]).save(). \
+                username(self._setup_datas[0]["username"]).password(self._setup_datas[0]["password"]).save(). \
                 goto_application(). \
-                goto_overtime(self._setup_datas["application"])
+                goto_overtime(self._setup_datas[0]["application"])
 
         def teardown_class(self):
             '''
@@ -49,7 +52,7 @@ class Test_Approval_Settings:
             '''
             self.main.close()
 
-    @pytest.mark.parametrize("data", test_the_fir_approval_datas)
+    @pytest.mark.parametrize("data", get_data("test_the_fir_approval"))
     def test_the_fir_approval(self, data):
         '''
         验证xxx账号的审批流是 未配置 或其他
@@ -59,7 +62,7 @@ class Test_Approval_Settings:
             get_the_first_approval_process()
         assert result == True
 
-    @pytest.mark.parametrize("data", test_edit_the_fir_approval_datas)
+    @pytest.mark.parametrize("data", get_data("test_edit_the_fir_approval"))
     def test_edit_the_fir_approval(self,data):
         '''
         验证编辑1级审批流，注意此用例中审批流不可重复
@@ -71,7 +74,7 @@ class Test_Approval_Settings:
             search_user(data["user"]).wait_sleep(data["sleeps"]).get_the_first_approval_process()
         assert result == True
 
-    @pytest.mark.parametrize("data", test_edit_the_sec_approval_datas)
+    @pytest.mark.parametrize("data", get_data("test_edit_the_sec_approval"))
     def test_edit_the_sec_approval(self,data):
         '''
         验证编辑2级审批流，注意：
@@ -85,7 +88,7 @@ class Test_Approval_Settings:
             search_user(data["user"]).wait_sleep(data["sleeps"]).get_the_first_approval_process()
         assert result == True
 
-    @pytest.mark.parametrize("data", test_del_the_fir_approval_datas)
+    @pytest.mark.parametrize("data", get_data("test_del_the_fir_approval"))
     def test_del_the_fir_approval(self,data):
         '''
         验证删除1级审批流
@@ -107,7 +110,7 @@ class Test_Approval_Settings:
             goto_approval_group_setting().get_approval_group_all()
         assert result == True
 
-    @pytest.mark.parametrize("data", test_del_and_add_approval_group_members_datas)
+    @pytest.mark.parametrize("data", get_data("test_del_and_add_approval_group_members"))
     def test_del_and_add_approval_group_members(self,data):
         '''
         验证刪除審批組中的全部人員，再添加新人員
@@ -119,7 +122,7 @@ class Test_Approval_Settings:
         for member in data["members"]:
             assert member in result
 
-    @pytest.mark.parametrize("data", test_add_approval_group_members_datas)
+    @pytest.mark.parametrize("data", get_data("test_add_approval_group_members"))
     def test_add_approval_group_members(self,data):
         '''
         验证刪除審批組中的全部人員，再添加新人員
