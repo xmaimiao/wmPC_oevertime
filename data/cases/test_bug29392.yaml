@@ -1,0 +1,11 @@
+test_HR_reminder_and_not_approved_not_tips:
+#dev
+#  - { applicant: deke1704,superior: deke1700,supervisor: deke1703,HR: deke1703,application: 加班,UserTel: 8585,startDate: 2021-02-16,starttime: "18:20",
+#      endtime: "20:20",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 批准 }
+#uat
+  - { applicant: test501,superior: test502,supervisor: test503,HR: test401,application: 加班,UserTel: 8585,startDate: 2021-02-17,starttime: "18:20",
+      endtime: "20:20",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 批准 }
+
+#mo
+#  - { applicant: test501,superior: test502,supervisor: test503,HR: test401,application: 加班,UserTel: 8585,startDate: 2021-02-16,starttime: "18:20",
+#      endtime: "20:20",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 批准 }

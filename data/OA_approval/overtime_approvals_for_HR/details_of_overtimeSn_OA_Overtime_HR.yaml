@@ -1,0 +1,47 @@
+agree_overtime_work_agreement_HR:
+  - by: xpath
+    locator:  2
+    action: sleep
+  - by: xpath
+    locator:  return document.getElementsByClassName("iCheck-helper")[0]
+    action: execute_js_scroll
+  - by: xpath
+    locator:  return document.getElementsByClassName("iCheck-helper")[0]
+    action: execute_js_click
+
+approved_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[1]'
+    action: click
+not_approved_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@class="subbox"]/a[contains(text(),"不批准")]'
+    action: click
+
+reminder_of_supplement_OA_Overtime_HR:
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: return document.getElementsByName("remind")[0]
+    action: execute_js_scroll
+  - by: xpath
+    locator: return document.getElementsByName("remind")[0]
+    action: execute_js_click
+
+remark_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@name="remark"]'
+    action: send
+    value: ${remark}
+
+close_details_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@id="cboxClose"]'
+    action: click
+
+get_approval_history_action_HR:
+  - by: xpath
+    locator: '//*[@class="table table_user"]/tbody/tr[last()]/td[2]'
+    action: wait_display
+

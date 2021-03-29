@@ -1,0 +1,38 @@
+1.pytest test_overtime_application.py::Test_Overtime_Application::test_overtime_application -s -v
+
+2.pytest test_overtime_application.py::Test_Overtime_Application::test_overtime_application_C -s -v
+
+3.pytest test_overtime_application.py::Test_Overtime_Application::test_cancel_of_the_fir -s -v
+
+4.pytest test_overtime_application.py::Test_Overtime_Application::test_overtime_application_get_tips -s -v
+
+#Test_Approval_OA_ALL
+1.pytest test_approval_OA_ALL.py::Test_Approval_OA_ALL::test_approved_OA_ALL -s -v
+
+#uat
+1.pytest test_story703.py::Test_Story703::test_overtime_application -s -v
+
+2.pytest test_story703.py::Test_Story703::test_overtime_application_C -s -v
+
+3.pytest test_story703.py::Test_Story703::test_overtime_application_get_tips -s -v
+
+4.pytest test_story703.py::Test_Story703::test_get_IDcard -s -v
+
+#Test_Bug29179
+#dev
+1.pytest test_bug29179.py::Test_Bug29179::test_overtime_application_not_tips -s -v
+
+1.pytest test_bug29179.py::Test_Bug29179::test_overtime_application -s -v
+
+1.pytest test_bug29179.py::Test_Bug29179::test_the_fir_for_approved -s -v
+
+1.pytest test_bug29179.py::Test_Bug29179::test_the_fir_for_not_approved -s -v
+
+1.pytest test_bug29179.py::Test_Bug29179::test_the_fir_reminder_of_supplement -s -v
+
+1.pytest test_bug29179.py::Test_Bug29179::test_the_overtimeSn_for_approved_HR -s -v
+
+#Test_Bug29184
+#dev
+1.pytest test_bug29184.py::Test_Bug29184::test_overtime_application -s -v
+

@@ -1,0 +1,20 @@
+test_the_overtimeSn_for_approved_HR_tips:
+  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 批准}
+
+test_the_overtimeSn_for_approved_HR:
+  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 批准}
+
+test_the_overtimeSn_for_not_approved_HR:
+  - {username: test38-test,password: wemust@prod,application: 加班,overtimeSn: OT202103020028,expect: 不批准}
+
+test_the_application_HR_tips:
+  - {username: test38-test,password: wemust@prod,application: 加班,applicant: test15,UserTel: 8585,
+     startDate: 2021-02-01,starttime: "9:00",endtime: "18:20",remark: 测试加班,IDcard: 7569}
+  - { username: test38-test,password: wemust@prod,application: 加班,applicant: test15,UserTel: 8585,
+      startDate: 2021-02-02,starttime: "9:00",endtime: "18:20",remark: 测试加班,IDcard: 7569 }
+  - { username: test38-test,password: wemust@prod,application: 加班,applicant: test15,UserTel: 8585,
+      startDate: 2021-02-03,starttime: "9:00",endtime: "18:20",remark: 测试加班,IDcard: 7569 }
+  - { username: test38-test,password: wemust@prod,application: 加班,applicant: test15,UserTel: 8585,
+      startDate: 2021-02-04,starttime: "9:00",endtime: "18:20",remark: 测试加班,IDcard: 7569 }
+  - { username: test38-test,password: wemust@prod,application: 加班,applicant: test15,UserTel: 8585,
+      startDate: 2021-02-05,starttime: "9:00",endtime: "18:20",remark: 测试加班,IDcard: 7569 }

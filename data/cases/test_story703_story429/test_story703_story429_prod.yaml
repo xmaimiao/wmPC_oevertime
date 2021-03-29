@@ -1,0 +1,40 @@
+test_superior_reminder_and_not_approved_not_tips:
+  - { applicant: test39-test,superior: test40-test,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "01:00",
+      endtime: "02:00",sleeps: 2,IDcard: 123456,remark: 測試數據 }
+
+test_supervisor_reminder_and_not_approved_not_tips:
+  - { applicant: test39-test,superior: test40-test,supervisor: test41-test ,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "02:00",
+      endtime: "02:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+test_supervisor_reminder_and_not_approved:
+  - { applicant: test39-test,superior: test40-test,supervisor: test41-test ,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "02:00",
+      endtime: "02:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+test_supervisor_reminder_and_not_approved_not_tips_detail:
+  - { applicant: test39-test,superior: test40-test,supervisor: test41-test ,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "02:00",
+      endtime: "02:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+test_HR_reminder_and_approved:
+  - { applicant: test39-test,superior: test40-test,supervisor: test41-test ,HR: test41-test,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "09:00",
+      endtime: "09:30",sleeps: 2,IDcard: 123456,remark: 測試數據 }
+
+test_overtime_application:
+#强制性休假日
+ - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-02,starttime: "09:00",
+    endtime: "10:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+ - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-02,starttime: "10:00",
+    endtime: "11:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+ - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-02,starttime: "11:00",
+    endtime: "12:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+#非强制性休假日
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "12:00",
+#    endtime: "13:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "13:00",
+#    endtime: "14:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "14:00",
+#    endtime: "15:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "15:00",
+#     endtime: "16:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细 }
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "16:00",
+#     endtime: "17:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细 }
+# - { username: test500,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-10,starttime: "17:00",
+#     endtime: "18:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细 }

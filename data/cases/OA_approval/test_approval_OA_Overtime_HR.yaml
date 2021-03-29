@@ -1,0 +1,15 @@
+test_approved_OA_Overtime_agreement_HR:
+ - {username: test300,password: wemust@prod,overtimeSn: OT202011160004,expect: 批准}
+
+test_not_approved_OA_Overtime_agreement_HR:
+ - {username: test300,password: wemust@prod,overtimeSn: OT202011160004,remark: 测试数据,expect: 批准}
+
+
+test_approved_OA_Overtime_HR:
+ - { username: test305,password: wemust@dev,overtimeSn: OT202011220002,expect: 批准 }
+
+test_not_approved_OA_Overtime_HR:
+ - { username: test300,password: wemust@prod,overtimeSn: OT202011160001,remark: 测试数据,expect: 批准 }
+
+test_reminder_of_supplement_OA_Overtime_HR:
+ - { username: test300,password: wemust@prod,overtimeSn: OT202011110006,expect: 補充資料提醒 }

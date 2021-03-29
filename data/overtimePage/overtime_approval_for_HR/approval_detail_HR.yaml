@@ -1,0 +1,43 @@
+click_reminder_of_supplement_HR:
+  - by: xpath
+    locator: '//*[@name="remind"]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@name="remind"]'
+    action: click
+
+get_reminder_toast:
+  - by: xpath
+    locator: '//*[@class="layui-layer-content"]'
+    action: ele_status
+
+click_cancel:
+  - by: xpath
+    locator: '//*[@name="menuId"]/../input[@class="cancel xboxClose_btn"]'
+    action: click
+
+click_approved_HR:
+  - by: xpath
+    locator: '//*[@name="menuId"]/../a[contains(text(),"批准")]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@name="menuId"]/../a[contains(text(),"批准")]'
+    action: click
+
+click_not_approved_HR:
+  - by: xpath
+    locator: '//*[@name="menuId"]/../a[contains(text(),"不批准")]'
+    action: wait_click
+  - by: xpath
+    locator: '//*[@name="menuId"]/../a[contains(text(),"不批准")]'
+    action: click
+
+close_poppage_HR:
+  - by: xpath
+    locator: '//*[@id="cboxClose"]'
+    action: click
+
+get_approval_history_action_HR:
+  - by: xpath
+    locator: '//*[@class="table table_user"]/tbody/tr[last()]/td[2]'
+    action: wait_display

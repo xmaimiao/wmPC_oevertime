@@ -1,0 +1,17 @@
+test_overtime_application_not_tips_ALL:
+  #dev
+#    - { applicant: deke1704,superior: deke1700,supervisor: deke1703,HR: deke1705,application: 加班,UserTel: 8585,startDate: 2021-03-01,starttime: "05:00",
+#        endtime: "05:30",sleeps: 2,IDcard: 123456,remark: 測試數據,applicant_zh: 德科1704}
+#    - { applicant: deke1709,superior: test302,supervisor: test303,HR: deke1705,application: 加班,UserTel: 8585,startDate: 2021-03-01,starttime: "01:00",
+#        endtime: "01:30",sleeps: 2,IDcard: 123456,remark: 測試數據,applicant_zh: 德科1709 }
+  #uat
+#  - { applicant: test501,superior: test502,supervisor: test503,HR: test401,application: 加班,UserTel: 8585,startDate: 2021-03-01,starttime: "03:00",
+#      endtime: "03:30",sleeps: 2,IDcard: 123456,remark: 測試數據,applicant_zh: test501 }
+  #mo
+  - { applicant: test39-test,superior: test40-test,supervisor: test41-test,HR: test41-test,application: 加班,UserTel: 8585,startDate: 2021-03-01,starttime: "03:00",
+      endtime: "03:30",sleeps: 2,IDcard: 123456,remark: 測試數據,applicant_zh: 测试39-test }
+
+test_overtime_application_not_tips:
+#dev
+    - { applicant: deke1704,superior: deke1700,supervisor: deke1703,HR: deke1705,application: 加班,UserTel: 8585,startDate: 2021-03-01,starttime: "06:00",
+        endtime: "06:30",sleeps: 2,IDcard: 123456,remark: 測試數據,applicant_zh: 德科1704}

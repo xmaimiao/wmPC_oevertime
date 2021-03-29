@@ -1,0 +1,122 @@
+test_get_IDcard:
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-28,starttime: 08:00,
+    endtime: 9:00,starttime2: 18:00,endtime2: 19:00,sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+
+test_overtime_application_C:
+#非周末申請加班
+ - { username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-28,starttime: "09:30",
+    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+#周末申請加班
+# - { username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-31,starttime: "09:30",
+#     endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细 }
+#强制性休假：申请周五（公衆假-下午）18：30~19：00---》該條數據不出現 deke1703
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:30",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+test_overtime_application:
+#工作日 加班时长 》 工作时间设置
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-25,starttime: "08:30",
+    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+#工作日 加班时长 = 工作时间设置 有bug
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-26,starttime: "09:00",
+    endtime: "18:20",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+#工作日 加班时长 《 工作时间设置
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2020-11-27,starttime: "09:00",
+    endtime: "18:00",sleeps: 2,IDcard: 123456,remark: 測試數據,expect: 加班明细}
+
+#强制性休假：申请周六（公衆假+休息日）09：00~18：00加班---》等於 deke1703
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-06,starttime: "09:00",
+#    endtime: "18:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#强制性休假：申请周六（公衆假+休息日）18：00~19：00加班---》相交 deke1703
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-06,starttime: "18:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#强制性休假：申请周四（公衆假-上午）08：00~19：00加班---》包含 deke1703
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "08:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#强制性休假：申请周五（非强制公衆假）08：00~19：00加班---》包含 deke1703
+# - { username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-01,starttime: "08:00",
+#   endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據 }
+#强制性休假：申请周五（公衆假-下午）18：00~18：30加班---》被包含 deke1703
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:00",
+#    endtime: "18:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+test_overtime_application_get_tips:
+#申请周一9：00~18：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "09:30",
+#    endtime: "18:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周日9：00~18：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-01-31,starttime: "09:30",
+#    endtime: "18:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周三（休息日）18：20~19：00加班,，無提示
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-03,starttime: "18:20",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#非C，例外人群,申请周二（公衆假）18：20~19：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-02,starttime: "18:20",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周四（公衆假-上午）09：00~12：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "09:00",
+#    endtime: "12:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周四（公衆假-上午）08：00~09：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "08:00",
+#    endtime: "09:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周四（公衆假-上午）12：00~13：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "12:00",
+#    endtime: "13:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+#申请周五（公衆假-下午）18：00~18：30加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:00",
+#    endtime: "18:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周五（公衆假-下午）18：30~19：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:30",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+#申请周五（公衆假-下午）18：20~19：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:20",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+#申请周六（公衆假+休息日）18：00~19：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-06,starttime: "18:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+#調整工作時間設置，申請周一12：00~19：00加班
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "12:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+##臨界值檢查-工作日
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "08:00",
+#    endtime: "09:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "08:00",
+#    endtime: "09:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "18:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "18:20",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "09:00",
+#    endtime: "18:20",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-01,starttime: "08:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+#公眾假-上午：
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "08:00",
+#    endtime: "09:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "08:00",
+#    endtime: "09:30",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "08:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "12:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-04,starttime: "09:00",
+#    endtime: "12:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+
+#公衆假-下午
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "08:00",
+#    endtime: "12:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "13:00",
+#    endtime: "15:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:20",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "14:00",
+#    endtime: "19:00",sleeps: 2,IDcard: 123456,remark: 測試數據}
+ - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "14:30",
+    endtime: "18:20",sleeps: 2,IDcard: 123456,remark: 測試數據}
+# - {username: test300,password: wemust@prod,application: 加班,UserTel: 8585,startDate: 2021-02-05,starttime: "18:30",
+#    endtime: "19:20",sleeps: 2,IDcard: 123456,remark: 測試數據}

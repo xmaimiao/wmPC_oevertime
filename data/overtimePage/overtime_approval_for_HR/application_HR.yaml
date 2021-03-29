@@ -1,0 +1,87 @@
+applicant:
+  - by: xpath
+    locator: '//*[@name="applicant"]'
+    action: click
+  - by: xpath
+    locator: '//*[@name="applicant"]'
+    action: send
+    value: ${applicant}
+#定位展开第一项
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: '//*[@class="autocomplete-suggestions"]/div[1]/strong[1]'
+    action: click
+
+
+UserTel:
+  - by: xpath
+    locator: '//*[@name="createUserTel"]'
+    action: send
+    value: ${UserTel}
+
+startDate:
+  - by: xpath
+    locator: 'a = document.getElementsByName("startDate")[0]; a.removeAttribute("readonly")'
+    action: execute_js
+  - by: xpath
+    locator: 'document.getElementsByName("startDate")[0].value="${startDate}";'
+    action: execute_js
+
+starttime:
+  - by: xpath
+    locator: 'a = document.getElementsByName("startDateType")[0]; a.removeAttribute("readonly")'
+    action: execute_js
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: 'document.getElementsByName("startDateType")[0].value="${starttime}";'
+    action: execute_js
+
+endtime:
+  - by: xpath
+    locator: 'a = document.getElementsByName("endDateType")[0]; a.removeAttribute("readonly")'
+    action: execute_js
+  - by: xpath
+    locator: 1
+    action: sleep
+  - by: xpath
+    locator: 'document.getElementsByName("endDateType")[0].value="${endtime}";'
+    action: execute_js
+
+remark:
+  - by: xpath
+    locator: document.getElementsByName("remark")[0].value="${remark}";
+    action: execute_js
+
+IDcard:
+  - by: xpath
+    locator: '//*[@Name="applicantCertificateValue2"]'
+    action: wait
+  - by: xpath
+    locator: '//*[@Name="applicantCertificateValue2"]'
+    action: clear
+  - by: xpath
+    locator: document.getElementsByName("applicantCertificateValue2")[0].value="${IDcard}";
+    action: execute_js
+  - by: xpath
+    locator: return document.getElementsByClassName("submit")[2];
+    action: execute_js_click
+
+upload_attachment:
+  - by: xpath
+    locator: '//*[@name="file"]/../label'
+    action: click
+
+save_click:
+  - by: xpath
+    locator: '//*[@class="subbox"]/a'
+    action: click
+
+
+click_tips:
+  - by: xpath
+    locator: '//*[@class="layui-layer-btn0"]'
+    action: click

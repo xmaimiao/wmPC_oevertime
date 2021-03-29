@@ -1,0 +1,8 @@
+goto_pending_for_approval_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[1]'
+    action: click
+goto_approved_OA_Overtime_HR:
+  - by: xpath
+    locator: '//*[@class="tab_title_2 item_tit"]/a[2]'
+    action: click
